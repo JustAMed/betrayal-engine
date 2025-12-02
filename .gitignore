@@ -6,4 +6,5 @@ engine
 
 # macOS system files
 .DS_Store
+.cache
 
