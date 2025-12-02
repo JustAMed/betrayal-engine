@@ -1,0 +1,9 @@
+# Object files
+*.o
+
+# Executable
+engine
+
+# macOS system files
+.DS_Store
+
