@@ -8,6 +8,22 @@
       "-Wextra",
       "-c",
       "-o",
+      "competitor.o",
+      "src/competitor.cpp"
+    ],
+    "directory": "/Users/medansh/Documents/betrayalEngine",
+    "file": "/Users/medansh/Documents/betrayalEngine/src/competitor.cpp",
+    "output": "/Users/medansh/Documents/betrayalEngine/competitor.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++20",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
       "main.o",
       "src/main.cpp"
     ],
