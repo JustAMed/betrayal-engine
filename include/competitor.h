@@ -11,4 +11,5 @@ class Competitor {
     
     Competitor(const string& n, int health);
     void takeDamage(int dmg);
+    void heal(int hel);
 };

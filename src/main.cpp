@@ -1,45 +1,30 @@
 #include <iostream>
-#include <string>
-#include <limits>
+#include <vector>
 #include "competitor.h"
-using std::cout;
-using std::string;
-using std::endl;
-using std::cin;
+#include "engine.h"
 
-void flushInput() {
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+int main()
+{
+    std::vector<Competitor> tributes;
+
+    tributes.push_back(Competitor("Katniss", 100));
+    tributes.push_back(Competitor("Peeta", 0));  // already dead
+    tributes.push_back(Competitor("Cato", 50));
+
+    std::cout << "Before removeDead:\n";
+    for (const auto &c : tributes)
+    {
+        std::cout << c.name << " (HP: " << c.currentHealth << ")\n";
+    }
+
+    removeDead(tributes);
+
+    std::cout << "\nAfter removeDead:\n";
+    for (const auto &c : tributes)
+    {
+        std::cout << c.name << " (HP: " << c.currentHealth << ")\n";
+    }
+
+    return 0;
 }
 
-
-int main() {
-  string n;
-  int h;
-  cout << "Name: ";
-  getline(cin, n);
-  flushInput();
-
-  cout << "Max Health: ";
-  cin >> h;
-  flushInput();
-
-  Competitor them(n, h);
-  while (true) {
-    cout << "1. Take Health\nAnything else. Exit";
-    int choice;
-    cin >> choice;
-    flushInput();
-
-    switch (choice) {
-      case 1:
-        int thou;
-        cout << "damage? ";
-        cin >> thou;
-        them.takeDamage(thou);
-        cout << "Name: " << them.name << ", health: " << them.currentHealth << endl;
-        break;
-      default:
-        return 0;
-    }
-  }
-} 
