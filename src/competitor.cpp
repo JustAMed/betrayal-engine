@@ -1,25 +1,10 @@
 #include "competitor.h"
 #include <string>
+#include <vector>
 using std::string;
 
-Competitor::Competitor(const string& n, int health)
-  : name(n), maxHealth(health), currentHealth(health), isAlive(true) {}
-
-void Competitor::takeDamage(int dmg) {
-  if (currentHealth <= 0) {
-    isAlive = false;
+void Competitor::addTribute(const string& n, int maxHp, int curHp, bool alive) {
+  name.push_back(n);
+  maxHealth.pushback(maxHp);
   }
-  else {
-    currentHealth -= dmg;
-  }
-}
-
-void Competitor::heal(int hel) {
-  if (currentHealth != maxHealth && isAlive == true) {
-    currentHealth += hel;
-    if (currentHealth > maxHealth) {
-      currentHealth = maxHealth;
-    }
-  }
-}
 

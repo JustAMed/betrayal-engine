@@ -1,15 +1,16 @@
 #pragma once
 #include <string>
+#include <vector>
+using std::vector;
 using std::string;
 
 class Competitor {
   public:
-    string name;
-    int maxHealth;
-    int currentHealth;
-    bool isAlive;
+    vector<string> name;
+    vector<int> maxHealth;
+    vector<int> currentHealth;
+    vector<bool> isAlive;
     
-    Competitor(const string& n, int health);
-    void takeDamage(int dmg);
-    void heal(int hel);
+    Competitor() {};
+    void addTribute(const string& n, int maxHp, int curHp, bool alive); 
 };
